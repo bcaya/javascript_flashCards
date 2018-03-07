@@ -1,24 +1,32 @@
+$(document).ready(function(){
+const flashCards = [ 
+  {
+    question:'samplequestion', answer:'samepleanswer'
+    },
+  {
+    question:'2samplequestion', answer:'2sampleanswer'
+    },
+    {
+    question:'3samplequestion', answer:'3sampleanswer'
+    }
+]
+let randomCard = () => {
+  let flashCard = flashCards[Math.floor(Math.random() * flashCards.length)];
+  $('.question').html(`${flashCard.question}`);
+  $('.answer').html(`${flashCard.answer}`);
+ debugger
+};
 
-const flashCardContent = new Map();
-flashCardContent.set("1cardFront", "1cardBack")
-flashCardContent.set("2cardFront", "2cardBack")
-flashCardContent.set('3cardFront', '3cardBack')
 
-let testKey =  [...flashCardContent].find(([,v])=> v === '1cardFront') || [][0];
-let testKey2 =  [...flashCardContent].find(([,v])=> v === '2cardBack') || [][0];
-function getByValue(map, searchVaue){
-  for (let [key, value] of map.entries()){
-    if (value === searchValue)
-    return key; 
-  }
+$('button').click(function() { 
+  $('p').toggleClass('answer')
+  $('.answer').toggleClass("showBack")
+})
+$('.nextCard').click(function(){
+  randomCard()
+  $('p').toggleClass('answer')
+
 }
-
-// document.getElementById("showAnswer").addEventListener("click", function(value, key){
   
-//   })
-
-function showAnswer() {
-  var x = document.getElementById("answer");
-  if (x.style.display === `${key}`)
-    x.style.display = `${value}`
-}
+)
+randomCard()}) 

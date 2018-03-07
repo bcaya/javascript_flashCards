@@ -5,7 +5,7 @@
   height: 768px; 
 }
 
-.card { 
+.card-container { 
   display: block; 
   align-content: center; 
   background-color:#34b430;
@@ -14,11 +14,6 @@
   border:solid 1px; 
 }
 
-.teal { 
-  display: block; 
-  align-content: center; 
-  background-color:red;
-  width: 33%; 
-  height: 25%; 
-  border:solid 1px; 
+.answer {
+  display:none; 
 }
